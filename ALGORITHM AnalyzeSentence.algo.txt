@@ -1,0 +1,33 @@
+ALGORITHM AnalyzeSentence
+VAR
+    sentence : String
+    length_count : Integer := 0
+    word_count : Integer := 0
+    vowel_count : Integer := 0
+    vowels : String <- "aeiouAEIOU"
+    char : Character
+
+BEGIN
+    length_count := 0
+    word_count := 0
+    vowel_count := 0
+
+    FOR each char IN sentence DO
+
+        length_count := length_count + 1
+
+        IF char IS IN vowels THEN
+            vowel_count := vowel_count + 1
+        END IF
+
+        IF char = " " THEN
+            word_count := word_count + 1
+        END IF
+    END FOR
+
+    word_count := word_count + 1
+
+    Write ("Length of sentence:"), length_count
+    Write ("Number of words:"), word_count
+    Write ("Number of vowels:"), vowel_count
+END
